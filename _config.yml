@@ -102,15 +102,12 @@ analytics:
 
 # Site Author
 author:
-  name             : "Kim Jung Jun"
+  name             : "김정준"
   avatar           : "/assets/img1.daumcdn.png"
-  bio              : "Responsibility"
+  bio              : "Trying to do better"
   location         : "Republic of Korea"
   email            : "ogoo0608@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "ogoo0608@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ogoo0608"
