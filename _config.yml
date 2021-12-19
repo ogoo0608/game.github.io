@@ -106,7 +106,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Responsibility"
   location         : "Republic of Korea"
-  email            : "ogoo0608@gmail.com
+  email            : "ogoo0608@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
