@@ -264,5 +264,5 @@ defaults:
       comments: # true
       share: true
       related: true
-
+      sidebar_main: true
 
