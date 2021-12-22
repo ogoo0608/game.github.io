@@ -163,7 +163,7 @@ post__taxonomy.html 파일을 만들어줬다면, 아래 코드를 붙여넣고 
 
 ```java
 
-{%- if site.category_archive.type and post.categories[0] -%}
+{/%- if site.category_archive.type and post.categories[0] -%}
     {%- case site.category_archive.type -%}
         {%- when "liquid" -%}
         {%- assign path_type = "#" -%}
@@ -209,7 +209,7 @@ post__taxonomy.html 파일을 만들어줬다면, 아래 코드를 붙여넣고 
 <br>
 
 
-    {% assign sum = site.posts | size %}
+    {/% assign sum = site.posts | size %}
 
     <nav class="nav__list">
     <input id="ac-toc" name="accordion-toc" type="checkbox" />
@@ -274,7 +274,7 @@ nav_list_main 파일이 카테고리의 부제목을 정해준다 !!
 
 <br>
 
-     {% if page.sidebar_main %}
+     {/% if page.sidebar_main %}
        {% include nav_list_main %}
     {% endif %}
 
