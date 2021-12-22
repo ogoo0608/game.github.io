@@ -15,20 +15,34 @@ categories:
 
 
 ---
-> Python 카테고리 test
-> 
-![image](https://user-images.githubusercontent.com/96330958/147036446-464d11ca-a33d-4c73-ae5d-15a07736bed3.png)
 
-> C 카테고리 test 
+## 1. Python 카테고리 test
 
-![image](https://user-images.githubusercontent.com/96330958/147036793-d22d129e-03b7-4960-a06e-1dc17c6cf1a4.png)
+> ![image](https://user-images.githubusercontent.com/96330958/147036446-464d11ca-a33d-4c73-ae5d-15a07736bed3.png)
 
-> C++ 카테고리 test 
+<br>
 
-![image](https://user-images.githubusercontent.com/96330958/147037383-0f983329-4d54-4b8e-b0c0-3fbe11592c96.png)
+## 2. C 카테고리 test 
 
-> C# 카테고리 test 
+> ![image](https://user-images.githubusercontent.com/96330958/147036793-d22d129e-03b7-4960-a06e-1dc17c6cf1a4.png)
 
-![image](https://user-images.githubusercontent.com/96330958/147037740-ff34adfe-c113-44bf-8c03-b9e4dfbf19ff.png)
+<br>
 
-- C# error
+## 3. C++ 카테고리 test 
+
+> ![image](https://user-images.githubusercontent.com/96330958/147037383-0f983329-4d54-4b8e-b0c0-3fbe11592c96.png)
+
+<br>
+
+## 4. C# 카테고리 test 
+
+> ![image](https://user-images.githubusercontent.com/96330958/147037740-ff34adfe-c113-44bf-8c03-b9e4dfbf19ff.png)
+
+- <font color='red'> C# error </font>
+
+> 해결완료
+
+>['C Sharp'] 공백 처리를 .Csharp 로 수정했더니 잘 된다!!
+
+이제 어느정도 블로그의 구색이 갖춰진 것 같다 !!! 
+
