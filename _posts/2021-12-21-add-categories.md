@@ -209,7 +209,7 @@ post__taxonomy.html 파일을 만들어줬다면, 아래 코드를 붙여넣고 
 <br>
 
 ```java
-
+\\<!--
 {% assign sum = site.posts | size %}
 
 <nav class="nav__list">
@@ -261,6 +261,7 @@ post__taxonomy.html 파일을 만들어줬다면, 아래 코드를 붙여넣고 
       </li>
   </ul>
 </nav>
+-->
 
 ```
 
