@@ -8,7 +8,7 @@
            📄 <span style="font-family:'Cafe24Oneprettynight';">Total number of posts :</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';"> </style> 
       </li>
       <li>
-        <span class="nav__sub-title">C/C++/C#</span>
+        <span class="nav__sub-title">Programming language</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Cpp" %}
@@ -37,16 +37,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-
-        <span class="nav__sub-title">Coding Test</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Coding Test Lesson" %}
-                        <li><a href="/categories/coding-test-lesson" class="">코딩 테스트 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        
+            
         <span class="nav__sub-title">Github</span>
             <ul>
                 {% for category in site.categories %}
