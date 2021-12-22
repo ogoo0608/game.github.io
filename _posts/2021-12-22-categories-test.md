@@ -7,6 +7,7 @@ toc_label: "On This Page"
 categories:
     - Blog
 ---
+<br>
 
 내가 추가한 카테고리는 C, C++, C#, Pyhon 그리고 Blog 이다.
 
@@ -28,3 +29,6 @@ categories:
 
 > C# 카테고리 test 
 
+![image](https://user-images.githubusercontent.com/96330958/147037740-ff34adfe-c113-44bf-8c03-b9e4dfbf19ff.png)
+
+- C# error
