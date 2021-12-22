@@ -110,7 +110,7 @@ sidebar_main: true // 변수값 !!
 
 ```java
 
-{% if post.header.teaser %}
+{/% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
 {% else %}
   {% assign teaser = site.teaser %}
