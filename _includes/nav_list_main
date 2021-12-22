@@ -18,13 +18,6 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "C++ games" %}
-                        <li><a href="/categories/cpp-games" class="">C ++ 게임 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
                     {% if category[0] == "C Sharp" %}
                         <li><a href="/categories/csharp" class="">C # ({{category[1].size}})</a></li>
                     {% endif %}
@@ -39,8 +32,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Pyhon" %}
-                        <li><a href="/categories/pyhon" class="">Python ({{category[1].size}})</a></li>
+                    {% if category[0] == "Python" %}
+                        <li><a href="/categories/python" class="">Python ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
