@@ -8,7 +8,7 @@
            📄 <span style="font-family:'Cafe24Oneprettynight';">Total number of posts :</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';"> </style> 
       </li>
       <li>
-        <span class="nav__sub-title">Programming language</span>
+        <span class="nav__sub-title">개발 언어</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Cpp" %}
