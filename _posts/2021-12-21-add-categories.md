@@ -208,14 +208,13 @@ post__taxonomy.html 파일을 만들어줬다면, 아래 코드를 붙여넣고 
 
 <br>
 
-```java
-\\<!--
-{% assign sum = site.posts | size %}
 
-<nav class="nav__list">
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
-  <ul class="nav__items" id="category_tag_menu"> 
+    {% assign sum = site.posts | size %}
+
+    <nav class="nav__list">
+    <input id="ac-toc" name="accordion-toc" type="checkbox" />
+    <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+    <ul class="nav__items" id="category_tag_menu"> 
 
       <!--전체 글 수-->
 
@@ -261,9 +260,7 @@ post__taxonomy.html 파일을 만들어줬다면, 아래 코드를 붙여넣고 
       </li>
   </ul>
 </nav>
--->
 
-```
 
 <br> 
 
@@ -273,15 +270,13 @@ nav_list_main 파일이 카테고리의 부제목을 정해준다 !!
 
 <br>
 
-## 2-5. __includes 폴더 내에 있는 siderbar.html 파일 수정
+## 2-5. __includes 폴더 내에 있는 siderbar.html 파일 수정_
 
 <br>
 
-```java
-  {% if page.sidebar_main %}
-    {% include nav_list_main %}
-  {% endif %}
-  ```
+     {% if page.sidebar_main %}
+       {% include nav_list_main %}
+    {% endif %}
 
   위와 같은 코드를 맨 아래에 붙여넣어주자 !!
 
@@ -299,12 +294,11 @@ nav_list_main 파일이 카테고리의 부제목을 정해준다 !!
 
   <br>
 
-  ```java
 
-# Defaults
-defaults:
-  # _posts
-  - scope:
+    # Defaults
+    defaults:
+    # _posts
+    - scope:
       path: ""
       type: posts
     values:
@@ -316,10 +310,6 @@ defaults:
       related: true
       mathjax: true
       sidebar_main: true
-
-  ```
-
-     siderbar_main: true
 
 을 사용해서 사이드바가 활성화 되게끔 해주면 된다.
 
