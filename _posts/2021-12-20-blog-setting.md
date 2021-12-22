@@ -5,6 +5,8 @@ categories:
     - Blog
 ---
 
+<br>
+
 ---
 > _sass/minimal-mistakes/skins/_contrast.scss
 
