@@ -76,3 +76,9 @@ main:
 <br>
 
 놀랍게도 끝이다 !! 매우 간단하다.
+
+<br>
+
+![image](https://user-images.githubusercontent.com/96330958/147194794-081b8de1-3b55-45a1-8fb5-43fb35612824.png)
+
+> 잘 구현된 것을 볼 수 있다.
