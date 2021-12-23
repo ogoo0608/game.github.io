@@ -34,3 +34,12 @@ categories:
     permalink: /search/
     ---
 ```
+
+<br>
+
+## 2. navigation.yml 파일 수정
+
+<br>
+
+그 다음으로는 navigation.yml 파일을 수정해주면 된다.
+
