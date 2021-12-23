@@ -25,6 +25,12 @@ categories:
 가장 먼저 _pages 폴더에 new file 을 누른 후 search.md 라는 파일을 생성해준다.
 
 그 다음 아래와 같은 코드를 붙여넣어주자.
+<br>
 
-
-
+```js
+    ---
+    title: Search
+    layout: search
+    permalink: /search/
+    ---
+```
