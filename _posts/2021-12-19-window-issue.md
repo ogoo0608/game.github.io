@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "윈도우 알림 메뉴 안 열림 issue"
+title: "윈도우 알림 메뉴 안 열림 이슈"
 ---
 
 <br>

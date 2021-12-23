@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "minimal mistakes 블로그 세팅"
+title: "minimal mistakes 블로그 설정"
 toc: true
 toc_sticky: true
 toc_label: "On This Page"
