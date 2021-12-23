@@ -18,5 +18,19 @@ categories:
 
 <br>
 
-## 1. 나 혼자 만들어보기
+## 1. __pages_ 폴더에 search.md 파일 생성
+
+<br>
+
+가장 먼저 _pages 폴더에 new file 을 누른 후 search.md 라는 파일을 생성해준다.
+
+그 다음 아래와 같은 코드를 붙여넣어주자.
+
+```
+---
+title: Search
+layout: search
+permalink: /search/
+---
+```
 
