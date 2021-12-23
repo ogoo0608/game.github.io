@@ -1,13 +1,16 @@
 ---
 layout: single
 title: "포스팅 글자에 색상을 넣어보자 !!"
+toc: true
+toc_sticky: true
+toc_label: "On This Page"
 categories:
     - Blog
 ---
 
 <br>
 
-> ## 글자에 색상 넣기
+> ## 1. 글자에 색상 넣기
 
 <br>
 
