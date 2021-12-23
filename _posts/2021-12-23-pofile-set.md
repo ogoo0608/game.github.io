@@ -45,7 +45,7 @@ README.md 파일을 들어가서 본격적으로 수정해주자.
 
 <br>
 
-```
+```js
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=400&section=header&text=Hi!%20I'm%20JungJun&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Being%20a%20%20%20%20%20%20Devloper&descAlignY=51&descAlign=80)
 ```
 
@@ -59,7 +59,7 @@ capsule-render 라는 repo 에서 구할 수 있는 소스이다.
 
 <br>
 
-```
+```js
 type=waving&color=gradient&heitght=400
 ```
 
@@ -73,7 +73,7 @@ type, color, height 를 자신이 원하는 디자인으로 수정해줄 수 있
 
 <br>
 
-```
+```js
 section=header&text=Hi!%20I'm%20JungJun
 ```
 
@@ -87,7 +87,7 @@ section=header&text=Hi!%20I'm%20JungJun
 
 <br>
 
-```
+```js
 animation=fadeIn
 ```
 
@@ -103,7 +103,7 @@ animation=fadeIn
 
 <br>
 
-```
+```js
 <h3 align="center"> 어쩌구저쩌구 </h3>
 ```
 
@@ -117,7 +117,7 @@ animation=fadeIn
 
 //주석은 알잘딱으로 빼자 .. ^^
 
-```
+```js
 <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white"/></a> //C++
 <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/></a> //JAVA
 <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a> //Python
