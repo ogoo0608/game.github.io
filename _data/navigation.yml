@@ -8,6 +8,5 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
-  - title: "![image](https://user-images.githubusercontent.com/96330958/147192748-befa00c7-1212-4915-aa81-8edae00007c9.png)
-"
+  - title: "Search"
     url: /search/
