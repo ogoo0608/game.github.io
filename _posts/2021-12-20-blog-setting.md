@@ -1,11 +1,16 @@
 ---
 layout: single
 title: "minimal mistakes 블로그 세팅"
+toc: true
+toc_sticky: true
+toc_label: "On This Page"
 categories:
     - Blog
 ---
 
 <br>
+
+## 1. 블로그 글 제목 색상 변경
 
 ---
 > _sass/minimal-mistakes/skins/_contrast.scss
@@ -21,6 +26,7 @@ categories:
 <br>
 <br>
 
+## 2. less than minutes 문구 삭제 및 날짜 표기
 
 ---
 블로그 home 에서 **less than 1 minutes** 라는 문구가 맘에 안 들어서 ,,
@@ -51,6 +57,8 @@ categories:
 <br>
 <br>
 
+## 3. 글자 크기 변경
+
 ---
 **블로그를 보고 있자니 글자 크기가 거슬려서 도무지 참을 수가 없다..**
 
@@ -59,6 +67,9 @@ categories:
 다음과 같은 경로에 있는 **font-size** 를 조절해주면 된다고 한다. ^^
 
 <br>
+
+## 4. 폰트 변경
+
 
 **추가적으로 폰트도 변경하고 싶다면**
 
@@ -89,6 +100,8 @@ $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
 <br>
 
+## 5. 코드 블럭 오류
+
 ---
 
 마지막으로 마크다운 문법 중 코드블록 ( ``` ) 을 사용 했을 때
@@ -107,11 +120,9 @@ Syntax Color 가 적용 안 되는 것을 고치고 자러 가야겠다.
 
 코드블록 type 를 java 로 변경하니까 아주 잘 렌더링 된다 . . .
 
-해결 완료 .. 
+해결 완료 .. ^^
 
 <br>
 
 ---
-
-__아니 글자에 색깔 넣는 거는 또 왜 안 되는걸까 . . .__
 
