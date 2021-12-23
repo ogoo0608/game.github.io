@@ -26,11 +26,5 @@ categories:
 
 그 다음 아래와 같은 코드를 붙여넣어주자.
 
-```
----
-title: Search
-layout: search
-permalink: /search/
----
-```
+
 
