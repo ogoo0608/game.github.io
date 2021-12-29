@@ -38,11 +38,18 @@
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">깃허브</span>
+        <span class="nav__sub-title">Note</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
                         <li><a href="/categories/blog" class="">Blog ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Others" %}
+                        <li><a href="/categories/blog" class="">Others ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
