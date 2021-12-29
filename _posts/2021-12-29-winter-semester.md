@@ -109,7 +109,7 @@ categories:
 
 <br>
 
-<font color = 'red'> ***중간고사*** </font>
+<font color = 'red'> 중간고사 </font>
 
 - 온라인 테스트
 - 오픈북 테스트로 필기 형식 진행
@@ -183,7 +183,7 @@ ch10. 객체 지향 프로그래밍
 
 <br>
 
-<font color = 'red'> ***기말고사*** </font>
+<font color = 'red'> 기말고사 </font>
 
 - **오프라인 필기 시험으로 진행**
 - **오전 10시, IT융합대학 강의실 602호**
