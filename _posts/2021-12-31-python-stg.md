@@ -468,3 +468,180 @@ runGame()
 <br>
 
 뭐가 문제지 ??
+
+<br>
+
+<br>
+
+
+일어나서 다시 보니까 멍청하게도 그냥 들여쓰기 문제였다.. ^^ .. 
+
+앞으로는 파이썬이 indent 에 매우 민감한 언어라는걸 상기하자 !!!
+
+```py
+import pygame
+import sys
+from time import sleep
+
+
+padWidth = 480 # 게임 화면 크기 
+padHeight = 640 
+
+
+def drawObject(obj, x, y): # 게임에 등장하는 객체를 드로잉
+    global gamePad
+    gamePad.blit(obj, (x,y)) # blit 이란, 비티 현상과 관련해서 해당하는 오브젝트를 x, y 좌표 위치로부터 그려라라는 의미 !!
+
+
+def initGame(): # 게임 초기화를 위한 함수 'initGame'
+    global gamePad, clock, background, fighter # global 변수로 gamePad 와 clock 을 가져온다
+    pygame.init()
+    gamePad = pygame.display.set_mode((padWidth, padHeight))
+    pygame.display.set_caption('PyShooting') # 게임의 이름 !!
+    background = pygame.image.load('background.png')
+    fighter = pygame.image.load('fighter.png')
+    clock = pygame.time.Clock()
+
+
+def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungame
+    global gamepad, clock, background, fighter # 정엽변수 불러와야 함 ....
+
+    fighterSize = fighter.get_rect().size
+    fighterWidth = fighterSize[0]
+    fighterHeight = fighterSize[1]
+
+    x = padWidth * 0.45 # 폭에서 0.45 위치
+    y = padHeight * 0.9 # 높이에서 0.9 위치
+    fighterX = 0
+
+
+    onGame = False
+    while not onGame:
+        for event in pygame.event.get():
+            if event.type in [pygame.QUIT]: # 창을 닫으면 ?
+                pygame.quit() # 파이 게임을 닫고 
+                sys.exit() # 시스템을 종료시킨다 !!
+
+            if event.type in [pygame.KEYDOWN]:
+                if event.key == pygame.K_LEFT: # 전투기 왼쪽으로 이동
+                    fighterX -= 5
+
+                elif event.key == pygame.K_RIGHT: # 전투기 오른쪽으로 이동
+                    fighterX += 5
+
+            if event.type in [pygame.KEYUP]: # 방향키를 떼면 전투기가 멈춤
+                if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                    fighterX = 0
+
+
+        drawObject(background, 0, 0)
+
+        x += fighterX
+        if x < 0: # x 가 0보다 작을 경우 : 게임 왼쪽 끝까지 가는 경우를 의미..
+            x = 0 # 멈춰 !
+        elif x > padWidth - fighterWidth: # 오른쪽 끝까지  갔을 때
+            x = padWidth - fighterWidth # 멈춰 !!
+
+        drawObject(fighter, x, y)
+
+        pygame.display.update() # 게임 화면을 다시 그림
+
+        clock.tick(60) # 초당 프레임 수를 60으로 설정하여 게임 플레이가 초당 60으로 진행됨
+
+    pygame.init()
+
+
+initGame()
+runGame()
+```
+
+<br>
+
+## 6-1 미사일 발사하기
+
+<br>
+
+가장 먼저 missile image png 파일이 업로듣 되도록 코딩해주고
+
+global 변수에 missile 을 추가한 뒤, 무기 좌표 리스트를 추가해준다..
+
+```py
+elif event.key == pygame.K_SPACE:
+                    missileX = x + fighterWidth/2
+                    missileY = y - fighterHeight
+                    missileXY.append([missileX, missileY])
+```
+
+<br>
+
+스페이스바를 눌렀을 때 미사일이 발사되도록 위와 같은 코드를 입력해주고,
+
+<br>
+
+```py
+if len(missileXY) != 0:
+            for i, bxy in enumerate(missileXY):
+                bxy[1] -= 10
+                missileXY[i][1] = bxy[1]
+
+                if bxy[1] <= 0:
+                    try:
+                        missileXY.remove(bxy)
+                    except:
+                        pass
+
+        if len(missileXY) != 0:
+            for bx, by in missileXY:
+                drawObject(missile, bx, by)
+```
+
+미사일이 발사되는 형태를 구현하기 위해 위와 같은 코드를 입력해준다 !!
+
+<br>
+
+## 6-2 랜덤한 운석 떨어지기
+
+<br>
+
+```py
+import random
+```
+
+<br>
+
+```py
+rockImage = ['rock01.png','rock02.png','rock03.png','rock04.png','rock05.png',
+             'rock06.png','rock07.png','rock08.png','rock09.png','rock10.png',
+             'rock11.png','rock12.png','rock13.png','rock14.png','rock15.png',
+             'rock16.png','rock17.png','rock18.png','rock19.png','rock20.png',
+             'rock21.png','rock22.png','rock23.png','rock24.png','rock25.png',
+             'rock26.png','rock27.png','rock28.png','rock29.png','rock30.png',]
+
+```
+
+<br>
+
+사실 이미지 하나만 써도 되는데, 그러면 재미가 떨어지기 때문에 리소스 파일에 있는 
+
+모든 이미지를 넣어주었다 .. ^^
+
+<br>
+
+```py
+# 운석 랜덤 생성
+    rock = pygame.image.load(random.choice(rockImage))
+    rockSize = rock.get_rect(),size
+    rockWidth = rockSize[0]
+    rockHeight = rockSize[1]
+```
+
+<br>
+
+```py
+# 운석 초기 위치 설정
+    rockX = random.randrange(0, padWidth - rockWidth)
+    rockY = 0
+    rockSpeed = 2
+```
+
+<br>
