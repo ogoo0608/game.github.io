@@ -669,6 +669,153 @@ rockY += rockSpeed # 운석이 아래로 향하게
 <br>
 
 ```py
+explosion = pygame.image.load('exlosion.png')
+```
+
+<br>
+
+```py
+isShot = False
+shotCount = 0
+reockPassed = 0
+```
+
+<br>
+
+global 변수에 explosion 추가는 필수 .. ^^
+
+<br>
+
+```py
+if bxy[1] < rockY:
+                    if bxy[0] > rockX and bxy[0] < rockX + rockWidth:
+                        missileXY.remove(bxy)
+                        isShot = True
+                        shotCount += 1
+```
+
+<br>
+
+```py
+if isShot:
+            drawObject(explosion, rockX, rockY)
+            rock = pygame.image.load(random.choice(rockImage))
+            rockSize = rock.get_rect().size
+            rockWidth = rockSize[0]
+            rockHeight = rockSize[1]
+            rockX = random.randrange(0, padWidth - rockWidth)
+            rockY = 0
+            isShot = False
+```
+
+<br>
+
+## 8. 파괴한 운석 수 & 놓친 운석 수 표시하기
+
+<br>
+
+```py
+def writeScore(count):
+    global gamePad
+    font = pygame.font.Font('NanumGothic.ttf', 15)
+    text = font.render('파괴한 운석 수 :' + str(count), True, (255, 255, 255))
+    gamePad.blit(text,(10,0))
+
+def writePassed(count):
+    global gamePad
+    font = pygame.font.Font('NanumGothic.ttf', 15)
+    text = font.render('놓친 운석 수  :' + str(count), True, (255, 0, 0))
+    gamePad.blit(text,(360,0))
+
+```
+
+def 를 이용하여 writeScore & writePassed 를 정의한다.
+
+```py
+writeScore(shotCount)
+```
+
+```py
+isShot = False
+    shotCount = 0
+    rockPassed = 0
+```
+
+<br>
+
+```py
+rockPassed += 1
+
+
+        writePassed(rockPassed)
+```
+
+<br>
+
+## 8-1. 운석 맞추면 운석 속도 증가하기
+
+<br>
+
+```py
+        if isShot:
+```
+
+<br>
+
+위와 같은 if문에 아래와 같은 코드를 삽입하자.
+
+<br>
+
+
+
+```py
+rockSpeed += 0.05
+            if rockSpeed >= 10:
+                rockSpeed = 10
+```
+
+<br>
+
+운석이 미사일에 맞으면 속도가 0.05 씩 증가한다. !!
+
+<br>
+
+## 9. 전투기가 운석과 충돌하거나 놓치면 게임 오버
+
+<br>
+
+```py
+def writeMessage(text):
+    global gamePad,gameoverSound
+    textfont = pygame.font.Font('NanumGothic.ttf', 70)
+    text = textfont.render(text, True, (255,0,0))
+    textpos = text.get_rect()
+    textpos.center = (padWidth/2, padHeight/2)
+    gamePad.blit(text, textpos)
+    pygame.display.update()
+    pygame.mixer.music.stop() # 배경 음악 정지 !
+    gameoverSound.play() # 게임 오버 사운드 재생 ! 
+    sleep(2)
+    pygame.mixer.music.play(-1) # 배경 음악 재생 !!
+    runGame()
+
+def crash():
+    global gamePad
+    writeMessage('Fighter is Destroyed!')
+
+def gameOver():
+    global gamePad
+    writeMessage('Game Over!')
+
+```
+
+<br>
+
+## 10. 완성 코드
+
+<br>
+
+```py
 import pygame
 import sys
 import random
@@ -683,6 +830,43 @@ rockImage = ['rock01.png','rock02.png','rock03.png','rock04.png','rock05.png',
              'rock16.png','rock17.png','rock18.png','rock19.png','rock20.png', 
              'rock21.png','rock22.png','rock23.png','rock24.png','rock25.png', 
              'rock26.png','rock27.png','rock28.png','rock29.png','rock30.png']
+explosionSound = ['explosion01.wav','explosion02.wav','explosion03.wav','explosion04.wav']
+
+def writeScore(count):
+    global gamePad
+    font = pygame.font.Font('NanumGothic.ttf', 15)
+    text = font.render('Destroyed meteorite : ' + str(count), True, (255, 255, 255))
+    gamePad.blit(text,(10,0))
+
+def writePassed(count):
+    global gamePad
+    font = pygame.font.Font('NanumGothic.ttf', 15)
+    text = font.render('Missed meteorite  : ' + str(count), True, (255, 0, 0))
+    gamePad.blit(text,(360,0))
+
+
+def writeMessage(text):
+    global gamePad,gameoverSound
+    textfont = pygame.font.Font('NanumGothic.ttf', 40)
+    text = textfont.render(text, True, (255,0,0))
+    textpos = text.get_rect()
+    textpos.center = (padWidth/2, padHeight/2)
+    gamePad.blit(text, textpos)
+    pygame.display.update()
+    pygame.mixer.music.stop()
+    gameoverSound.play()
+    sleep(2)
+    pygame.mixer.music.play(-1)
+    runGame()
+
+def crash():
+    global gamePad
+    writeMessage('Fighter is Destroyed!')
+
+def gameOver():
+    global gamePad
+    writeMessage('Game Over!')
+
 
 
 def drawObject(obj, x, y): # 게임에 등장하는 객체를 드로잉
@@ -691,18 +875,23 @@ def drawObject(obj, x, y): # 게임에 등장하는 객체를 드로잉
 
 
 def initGame(): # 게임 초기화를 위한 함수 'initGame'
-    global gamePad, clock, background, fighter, missile # global 변수
+    global gamePad, clock, background, fighter, missile, explosion, missileSound, gameOverSound # global 변수
     pygame.init()
     gamePad = pygame.display.set_mode((padWidth, padHeight))
     pygame.display.set_caption('PyShooting') # 게임의 이름 !!
     background = pygame.image.load('background.png')
     fighter = pygame.image.load('fighter.png')
     missile = pygame.image.load('missile.png')
+    explosion = pygame.image.load('explosion.png')
+    pygame.mixer.music.load('music.wav')
+    pygame.mixer.music.play(-1)
+    missileSound = pygame.mixer.Sound('missile.wav')
+    gameOverSound = pygame.mixer.Sound('gameover.wav')
     clock = pygame.time.Clock()
 
 
 def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungame
-    global gamepad, clock, background, fighter, missile # 정엽변수 불러와야 함 ....
+    global gamepad, clock, background, fighter, missile, explosion, missileSound # 정엽변수 불러와야 함 ....
 
     fighterSize = fighter.get_rect().size
     fighterWidth = fighterSize[0]
@@ -719,11 +908,16 @@ def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungam
     rockSize = rock.get_rect().size
     rockWidth = rockSize[0]
     rockHeight = rockSize[1]
+    destroySound = pygame.mixer.Sound(random.choice(explosionSound))
 
 # 운석 초기 위치 설정
     rockX = random.randrange(0, padWidth - rockWidth)
     rockY = 0
     rockSpeed = 2
+
+    isShot = False
+    shotCount = 0
+    rockPassed = 0
 
 
     onGame = False
@@ -741,6 +935,7 @@ def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungam
                     fighterX += 5
 
                 elif event.key == pygame.K_SPACE:
+                    missileSound.play()
                     missileX = x + fighterWidth/2
                     missileY = y - fighterHeight
                     missileXY.append([missileX, missileY])
@@ -760,12 +955,27 @@ def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungam
         elif x > padWidth - fighterWidth: # 오른쪽 끝까지  갔을 때
             x = padWidth - fighterWidth # 멈춰 !!
 
+
+        if y < rockY + rockHeight:
+            if(rockX > x and rockX < x + fighterWidth) or \
+                (rockX + rockWidth > x and rockX + rockWidth):
+                crash()
+
         drawObject(fighter, x, y)
+
+        if rockPassed == 3:
+            gameOver()
 
         if len(missileXY) != 0:
             for i, bxy in enumerate(missileXY):
                 bxy[1] -= 10
                 missileXY[i][1] = bxy[1]
+
+                if bxy[1] < rockY:
+                    if bxy[0] > rockX and bxy[0] < rockX + rockWidth:
+                        missileXY.remove(bxy)
+                        isShot = True
+                        shotCount += 1
 
                 if bxy[1] <= 0:
                     try:
@@ -776,6 +986,8 @@ def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungam
         if len(missileXY) != 0:
             for bx, by in missileXY:
                 drawObject(missile, bx, by)
+
+        writeScore(shotCount)
 
         rockY += rockSpeed # 운석이 아래로 향하게
 
@@ -788,10 +1000,30 @@ def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungam
             rockHeight = rockSize[1]
             rockX = random.randrange(0, padWidth - rockWidth)
             rockY = 0
+            rockPassed += 1
+
+
+        writePassed(rockPassed)
+
+
+        if isShot:
+            drawObject(explosion, rockX, rockY)
+            destroySound.play()
+            rock = pygame.image.load(random.choice(rockImage))
+            rockSize = rock.get_rect().size
+            rockWidth = rockSize[0]
+            rockHeight = rockSize[1]
+            rockX = random.randrange(0, padWidth - rockWidth)
+            rockY = 0
+            destroySound = pygame.mixer.Sound(random.choice(explosionSound))
+            isShot = False
+
+            rockSpeed += 0.05
+            if rockSpeed >= 10:
+                rockSpeed = 10
 
         drawObject(rock, rockX, rockY) # 운석 그리기
-            
-                        
+                     
 
         pygame.display.update() # 게임 화면을 다시 그림
 
@@ -802,7 +1034,11 @@ def runGame(): # 실질적으로 게임이 실행될 수 있는 함수인 rungam
 
 initGame()
 runGame()
-
 ```
 
-내일 이어서 할 예정이다 !!!
+<br>
+
+>간단한 갤러그 같은 게임임에도 꽤나 긴 코드를 작성해야 한다는 점에서 놀라웠다. !!
+>>타인이 올린 자료를 보고 그저 코드를 따라서 적었을 뿐인데도 많은 공부가 되었다.
+>>>아주 재밌었다 ... 이 코드를 이용해서 나만의 게임도 만들면서 공부할 것이다.
+>>>>일단 계절학기가 우선이지만 방학동안 많은 분야를 경험하고 싶다.
