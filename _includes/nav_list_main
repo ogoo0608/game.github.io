@@ -47,7 +47,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Baekjoon" %}
-                        <li><a href="/categories/project" class="">Baekjoon ({{category[1].size}})</a></li>
+                        <li><a href="/categories/baekjoon" class="">Baekjoon ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
