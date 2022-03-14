@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "깃허브 상단에 검색창 구현하기"
+title: "[Github] 상단에 검색창 구현하기"
 toc: true
 toc_sticky: true
 toc_label: "On This Page"

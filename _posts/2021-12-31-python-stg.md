@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "간단한 슈팅 게임 만들기 프로젝트"
+title: "[Python] 간단한 슈팅 게임 만들기 프로젝트"
 toc: true
 toc_sticky: true
 toc_label: "On This Page"

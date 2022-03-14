@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "깃허브 README.md 꾸미기"
+title: "[Github] README.md 꾸미기"
 toc: true
 toc_sticky: true
 toc_label: "On This Page"
