@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "카테고리 테스트 완료"
+title: "[Github] 카테고리 테스트 완료"
 toc: true
 toc_sticky: true
 toc_label: "On This Page"

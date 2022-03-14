@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "글자에 색상 넣기"
+title: "[Github] 글자에 색상 넣기"
 toc: true
 toc_sticky: true
 toc_label: "On This Page"
