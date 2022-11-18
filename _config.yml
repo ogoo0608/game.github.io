@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Studying Game Client"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Kim jung jun"
+name                     : "Your Name"
 description              : "An amazing website."
 url                      : "https://ogoo0608.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
