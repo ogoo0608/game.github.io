@@ -6,7 +6,7 @@ toc_sticky: true
 toc_label: "study"
 categories:
     - Study
----
+--- 
 
 <br>
 
