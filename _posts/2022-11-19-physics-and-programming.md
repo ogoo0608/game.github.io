@@ -31,8 +31,6 @@ Compiler : ~ fast, 전체 프로그램을 작성 후 목적 파일을 작성하�
 
 Interpreter : ~ slow, line by line 으로 명령어를 실행시키는 방법
 
-![image](https://user-images.githubusercontent.com/96330958/158177493-09854958-d965-459b-b5f3-312547da79b3.png)
-
 
 <br>
 
