@@ -174,47 +174,10 @@ Basic HTML Tamplate !!
 <br>
 
 > url 을 이용해 원하는 웹페이지를 직접 요청하는 과정을 통해 웹의 기본적인 동작 구조인 request &rarr; response 개념을 살펴본다.
-
-```html
-<!DOCTYPE html>
-<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" dir="ltr" prefix="og: http://ogp.me/ns#">
-<head>
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<meta charset="utf-8" />
-<link rel="canonical" href="https://www.apple.com/iphone-13-pro/" />
   
-  <br>
+<br>
   
- ## 웹프로그래밍 (3월 24일)
+## 웹프로그래밍 (3월 24일)
 
 <br>
 
