@@ -1,8 +1,9 @@
 ---
 layout: single
 title: "about Unreal Engine"
-categories:
-    - Unreal
+toc: true
+toc_sticky: true
+toc_label: "study"
 ---
 
 <br>
