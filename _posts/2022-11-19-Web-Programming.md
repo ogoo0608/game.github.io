@@ -720,10 +720,9 @@ result
 ```html
 <form function = "데이터를 전송할 URL" method="전송방법">
 	<input type = "text>
-...
 </form>
 ```
-
+		       
 <br>
 
 전송 방법 : GET, POST
